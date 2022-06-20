@@ -1,0 +1,100 @@
+.header {
+    
+    background-color: $lightBlue;
+
+    &.open {
+        
+        .header__hamburger {
+            > span:first-child {
+                transform: rotate(45deg);
+              }
+              
+              > span:nth-child(2) {
+                opacity: 0;
+              }
+              
+              > span:last-child {
+                transform: rotate(-45deg);
+              }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 3.2rem 2.2rem 5rem 2.2rem;
+
+        @include breakpoint-up(large) {
+            padding: 3.5rem 4.5rem; 
+        }
+    }
+
+    &__logo {
+        img {  
+            @include breakpoint-up(large) {
+                height: 3.5rem;
+            }
+        }
+    }
+
+    &__hamburger {
+        > span {
+            display: block;
+            height: 0.2rem;
+            width: 2.6rem; 
+            background-color: $white;
+            transition: all 300ms ease-in-out;
+            transform-origin: 3px 1px;
+
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    &__links {
+
+        a {
+            font-size: 1.5rem;
+            font-weight: 600;
+
+            &:not(:last-child) {
+                margin-right: 5rem;
+            }
+        }
+    }
+
+    &__cta {  
+        background-color: $white;
+        color: $veryDarkDesaturatedBlue;
+    }
+
+    &__menu {
+
+        position: absolute;
+        background-color: $white;
+        width: calc(100% - 4.4rem);
+        left: 50%;
+        transform: translateX(-50%); 
+
+        a {
+            display: block;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        a:not(:last-child) {
+            margin-top: 3.7rem;
+            color: $darkGrayishBlue;
+        }       
+    }
+
+    &__cta-mobile {
+        background-color: $yellow;
+        width: 14rem;
+        margin: 3.2rem auto;
+        text-align: center;
+    }
+}

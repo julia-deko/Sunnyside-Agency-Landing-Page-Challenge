@@ -1,0 +1,202 @@
+.articles {    
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    
+    @include breakpoint-up(large) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 144rem;
+        margin: auto;
+    }
+
+    &__item {
+        padding: 7rem 3rem;  
+    }    
+    
+    &__text {
+        text-align: center;
+        color: $veryDarkDesaturatedBlue;
+
+        @include breakpoint-between(medium, large) {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include breakpoint-up(large) {
+            text-align: left;
+        }
+
+        > h2 {
+            margin-bottom: 3rem;
+
+            @include breakpoint-up(large) {
+                font-size: 3.9rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        > p {
+            color: $darkGrayishBlue;
+            margin-bottom: 3rem;
+
+            @include breakpoint-up(large) {
+                margin-bottom: 3.8rem;
+            }
+        }
+       
+        > a {
+            position: relative;
+            color: $veryDarkDesaturatedBlue;
+            font-family: 'Fraunces', serif;
+            text-transform: uppercase;
+            font-size: $font-sm;
+            letter-spacing: 1px;
+            z-index: 2;
+
+            &::after {
+                content: ' ';
+                position: absolute;
+                left: 7%;
+                bottom: 16px;
+                width: 137px;
+                height: 10px;
+                border-radius: 5px;
+                // transform: translate(-12%, 190%);
+                transform: translateX(-12%) translateY(190%);
+                background-color: #fff0c2;
+                z-index: -1;
+              }       
+        }       
+    }
+
+    &__image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        @include breakpoint-down(medium) {
+            min-height: 50rem;
+            height: 50vh;
+        }
+        
+        @include breakpoint-down(small) {
+            min-height: 30rem; 
+        }
+    }
+
+    .firstText {
+        @include breakpoint-down(medium) {
+            order: 2;
+        }
+
+        @include breakpoint-up(large) {
+            padding: 16.5rem 11.5rem 16rem 16.5rem;
+        } 
+    }
+
+    .secondText {
+        @include breakpoint-down(medium) {
+            order: 4;
+        }
+        @include breakpoint-up(large) {
+            padding: 16.5rem 17.7rem 15.8rem 11rem;
+        } 
+    }
+
+    .firstImg {
+        background-image: url(/images/mobile/image-transform.jpg);
+
+        @include breakpoint-up(large) {
+            background-image: url(/images/desktop/image-transform.jpg);
+        }
+
+        @include breakpoint-down(medium) {
+            order: 1;
+        }  
+    }
+
+    .secondImg {
+        background-image: url(/images/mobile/image-stand-out.jpg);
+
+        @include breakpoint-up(large) {
+            background-image: url(/images/desktop/image-stand-out.jpg);
+        }
+
+        @include breakpoint-down(medium) {
+            order: 3;
+        } 
+    }
+
+
+    &__withBgd {
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding-bottom: 5rem;
+        padding-left: 2.7rem;
+        padding-right: 2.7rem;
+        
+        h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+
+            @include breakpoint-up(large) {
+                margin-bottom: 3rem;
+            }   
+        }
+
+        p {
+            font-size: 1.4rem;
+            vertical-align: text-bottom;
+
+            @include breakpoint-up(medium) {
+                margin-bottom: 5rem;
+            }
+        }
+
+        @include breakpoint-down(medium) {
+            display: flex;
+            align-items: flex-end;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        @include breakpoint-up(large) {
+            padding: 40rem 20rem 6.5rem 20rem;
+        }
+    }
+
+
+    .firstBg {
+        background-image: url(/images/mobile/image-graphic-design.jpg);
+        color: $darkDesaturatedCyan;
+
+        @include breakpoint-up(large) {
+            background-image: url(/images/desktop/image-graphic-design.jpg);
+        }
+
+        @include breakpoint-down(medium) {
+            order: 5;
+        }
+    }
+
+    .secondBg {
+        background-image: url(/images/mobile/image-photography.jpg);
+        color: $darkBlue;
+
+        @include breakpoint-up(large) {
+            background-image: url(/images/desktop/image-photography.jpg);
+        }
+
+        @include breakpoint-down(medium) {
+            order: 6;
+        }
+    }
+}

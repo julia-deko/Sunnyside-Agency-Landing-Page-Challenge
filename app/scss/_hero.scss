@@ -1,0 +1,44 @@
+.hero {
+    
+    background-color: $lightBlue;
+    background-image: url(/images/mobile/image-header.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    height: calc(100vh - 110px);
+
+    @include breakpoint-up(large) {
+        background-image: url(/images/desktop/image-header.jpg);
+    }
+    
+
+    &__title {
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            text-align: center;
+            font-size: 4rem;
+            color: $white;
+            letter-spacing: 0.5rem;
+            font-weight: 900;
+            padding-top: 3rem;
+            
+
+            @include breakpoint-up(large) {
+                font-size: 5.5rem;
+                padding-top: 8rem;
+                letter-spacing: 1rem;
+               
+            }
+        }
+    }
+
+    &__arrow {
+        text-align: center;
+        padding-top: 5.5rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 9.5rem;
+        }
+    }
+}
